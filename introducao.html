@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Introdução ao CSS</title>
+    <meta name="description" content="Resumo prático sobre o que é CSS, seletores e hierarquia de aplicação.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/prism.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <h1>Introdução ao CSS</h1>
+    <p>
+        O CSS serve para separar a estrutura do site do seu design visual, permitindo controlar as cores, fontes,
+        espaçamentos e o comportamento responsivo dos elementos em uma única folha de estilos independente.
+    </p>
+
+    <br />
+    <hr />
+
+    <h2>O que é CSS?</h2>
+    <p>
+        Significa Cascading Style Sheets (Folhas de Estilo em Cascata). É uma linguagem de estilo usada para ditar a
+        <b>aparência e a estética</b> dos elementos que foram estruturados através das tags do HTML.
+    </p>
+
+    <br />
+    <hr />
+
+    <h2>Formas e Tipos de Aplicação</h2>
+    <p>
+        Existem diferentes maneiras de selecionar um elemento HTML e aplicar um estilo CSS sobre ele. Abaixo estão as
+        quatro formas principais:
+    </p>
+
+    <br />
+
+    <h3>1. Aplicação Inline (Atributo style="")</h3>
+    <p>
+        Consiste em aplicar o estilo **diretamente dentro da tag HTML** utilizando a propriedade <b>style</b>. É
+        recomendada apenas para testes rápidos ou exceções muito específicas, pois mistura estrutura com design.
+    </p>
+    <pre><code class="language-html">&lt;p style="color: blue; font-size: 16px;"&gt;Este parágrafo será azul.&lt;/p&gt;</code></pre>
+
+    <br />
+
+    <h3>2. Seleção por Tag</h3>
+    <p>
+        Seleciona e aplica a regra visual a **todas as tags idênticas** que existirem na página ao mesmo tempo.
+    </p>
+    <pre><code class="language-css">/* Altera todos os parágrafos do site */
+p {
+    color: green;
+}</code></pre>
+
+    <br />
+
+    <h3>3. Seleção por Classe (Atributo class="")</h3>
+    <p>
+        Cria uma regra que pode ser **reutilizada em múltiplos elementos** diferentes da página. No HTML você usa o
+        atributo <b>class="nome-da-classe"</b> e no CSS você a seleciona iniciando com um **ponto (.)**.
+    </p>
+    <pre><code class="language-html">&lt;p class="texto-destaque"&gt;Texto importante.&lt;/p&gt;
+&lt;span class="texto-destaque"&gt;Símbolo importante.&lt;/span&gt;</code></pre>
+    <pre><code class="language-css">/* CSS */
+.texto-destaque {
+    font-weight: bold;
+    background-color: yellow;
+}</code></pre>
+
+    <br />
+
+    <h3>4. Seleção por ID (Atributo id="")</h3>
+    <p>
+        Aplica o estilo a um **elemento único e exclusivo** da página. Dois elementos nunca devem compartilhar o mesmo
+        ID. No HTML você usa o atributo <b>id="meu-id"</b> e no CSS você o seleciona iniciando com uma **hashtag (#)**.
+    </p>
+    <pre><code class="language-html">&lt;button id="botao-enviar"&gt;Enviar&lt;/button&gt;</code></pre>
+    <pre><code class="language-css">/* CSS */
+#botao-enviar {
+    background-color: blue;
+    color: white;
+}</code></pre>
+
+    <br />
+    <hr />
+
+    <h2>Hierarquia e Especificidade (A Cascata)</h2>
+    <p>
+        Quando duas ou mais regras CSS tentam mudar a mesma propriedade de um elemento (como definir cores diferentes),
+        o navegador resolve o conflito seguindo uma **ordem estrita de peso e prioridade**:
+    </p>
+    <p>
+        A regra geral diz que **o seletor mais específico e direcionado sempre vence o mais genérico**. A ordem de peso,
+        do mais forte para o mais fraco, é:
+    </p>
+    <p>
+        1. <b>Inline (style=""):</b> É o mais forte de todos. Ele ignora qualquer regra externa e aplica o estilo direto
+        na tag.
+    </p>
+    <p>
+        2. <b>ID (#):</b> É muito forte por ser focado em um único elemento exclusivo da tela. Vence as classes e as
+        tags.
+    </p>
+    <p>
+        3. <b>Classe (.):</b> Tem peso médio. Consegue vencer as regras genéricas aplicadas diretamente nas tags.
+    </p>
+    <p>
+        4. <b>Tag:</b> É o seletor mais fraco e genérico de todos, pois afeta elementos de forma global.
+    </p>
+
+    <br />
+    <hr />
+
+    <h2>Regras para inicialização</h2>
+    <ol>
+        <li>Crie uma pasta chamado "<b><i>styles</i></b>" dentro do projeto.</li>
+        <li>Crie um arquivo chamado "<b><i>main.css</i></b>"</li>
+        <li>Abra lado-a-lado a página que deseja estilizar e o arquivo css.</li>
+        <li>Crie o estilo no arquivo css.</li>
+        <li>Adicione a classe onde você quer aplicar o estilo no arquivo da página.</li>
+        <li>Salve ambos arquivos e verifique a aplicação do estilo.</li>
+    </ol>
+
+    <br />
+    <hr />
+
+    <div style="display: flex; justify-content: center;">
+        <button onclick="history.back()">Voltar</button>
+    </div>
+
+    <script src="js/prism.js"></script>
+</body>
+
+</html>
